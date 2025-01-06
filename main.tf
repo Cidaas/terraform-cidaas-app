@@ -96,7 +96,6 @@ locals {
     application_meta_data               = var.application_meta_data
     allow_guest_login                   = var.allow_guest_login
     group_role_restriction              = var.group_role_restriction
-    basic_settings                      = var.basic_settings
     mfa                                 = var.mfa
     social_providers                    = var.social_providers
     custom_providers                    = var.custom_providers
@@ -229,7 +228,6 @@ resource "cidaas_app" "app" {
   application_meta_data               = local.defaults["application_meta_data"]
   allow_guest_login                   = local.defaults["allow_guest_login"]
   group_role_restriction              = local.defaults["group_role_restriction"]
-  basic_settings                      = local.defaults["basic_settings"]
   mfa                                 = local.defaults["mfa"]
   social_providers                    = local.defaults["social_providers"]
   custom_providers                    = local.defaults["custom_providers"]

@@ -608,7 +608,3 @@ output "backchannel_logout_session_required" {
   description = "Whether backchannel logout session is required"
 }
 
-output "basic_settings" {
-  value       = cidaas_app.app.basic_settings
-  description = "The basic settings configuration"
-}

@@ -812,17 +812,6 @@ variable "group_role_restriction" {
   default     = null
 }
 
-variable "basic_settings" {
-  type = object({
-    client_secrets = optional(list(object({
-      client_secret            = optional(string)
-      client_secret_expires_at = optional(number)
-    })))
-  })
-  description = "Basic settings for the client."
-  default     = null
-}
-
 variable "common_configs" {
   type = object({
     client_type         = optional(string)
@@ -962,12 +951,6 @@ variable "common_configs" {
           match_condition = string
           roles           = list(string)
         })
-      })))
-    }))
-    basic_settings = optional(object({
-      client_secrets = optional(list(object({
-        client_secret            = optional(string)
-        client_secret_expires_at = optional(number)
       })))
     }))
     mfa = optional(object({
