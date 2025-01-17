@@ -125,6 +125,8 @@ locals {
     id_token_signed_response_alg        = var.id_token_signed_response_alg
     id_token_encrypted_response_alg     = var.id_token_encrypted_response_alg
     id_token_encrypted_response_enc     = var.id_token_encrypted_response_enc
+    logo_uri                            = var.logo_uri
+    accept_roles_in_the_registration    = var.accept_roles_in_the_registration
   }
   defaults = { for k, v in local.attributes : k => v != null ? v : lookup(var.common_configs, k, null) }
 
@@ -257,4 +259,6 @@ resource "cidaas_app" "app" {
   id_token_signed_response_alg        = local.defaults["id_token_signed_response_alg"]
   id_token_encrypted_response_alg     = local.defaults["id_token_encrypted_response_alg"]
   id_token_encrypted_response_enc     = local.defaults["id_token_encrypted_response_enc"]
+  logo_uri                            = local.defaults["logo_uri"]
+  accept_roles_in_the_registration    = local.defaults["accept_roles_in_the_registration"]
 }
