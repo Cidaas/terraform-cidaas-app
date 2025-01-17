@@ -812,6 +812,12 @@ variable "group_role_restriction" {
   default     = null
 }
 
+variable "accept_roles_in_the_registration" {
+  type        = bool
+  description = "A boolean flag that determines whether roles can be accepted during the registration process."
+  default     = null
+}
+
 variable "common_configs" {
   type = object({
     client_type         = optional(string)
@@ -987,26 +993,28 @@ variable "common_configs" {
       }))
       skip_duration_in_days = optional(number)
     }))
-    policy_uri                      = optional(string)
-    tos_uri                         = optional(string)
-    imprint_uri                     = optional(string)
-    contacts                        = optional(list(string))
-    token_endpoint_auth_method      = optional(string)
-    token_endpoint_auth_signing_alg = optional(string)
-    default_acr_values              = optional(list(string))
-    editable                        = optional(bool)
-    web_message_uris                = optional(list(string))
-    initiate_login_uri              = optional(string)
-    registration_client_uri         = optional(string)
-    registration_access_token       = optional(string)
-    client_uri                      = optional(string)
-    jwks_uri                        = optional(string)
-    jwks                            = optional(string)
-    sector_identifier_uri           = optional(string)
-    subject_type                    = optional(string)
-    id_token_signed_response_alg    = optional(string)
-    id_token_encrypted_response_alg = optional(string)
-    id_token_encrypted_response_enc = optional(string)
+    policy_uri                       = optional(string)
+    tos_uri                          = optional(string)
+    imprint_uri                      = optional(string)
+    contacts                         = optional(list(string))
+    token_endpoint_auth_method       = optional(string)
+    token_endpoint_auth_signing_alg  = optional(string)
+    default_acr_values               = optional(list(string))
+    editable                         = optional(bool)
+    web_message_uris                 = optional(list(string))
+    initiate_login_uri               = optional(string)
+    registration_client_uri          = optional(string)
+    registration_access_token        = optional(string)
+    client_uri                       = optional(string)
+    jwks_uri                         = optional(string)
+    jwks                             = optional(string)
+    sector_identifier_uri            = optional(string)
+    subject_type                     = optional(string)
+    id_token_signed_response_alg     = optional(string)
+    id_token_encrypted_response_alg  = optional(string)
+    id_token_encrypted_response_enc  = optional(string)
+    logo_uri                         = optional(string)
+    accept_roles_in_the_registration = optional(bool)
   })
   description = "Common configurations to be inherited by multiple apps"
   default     = {}

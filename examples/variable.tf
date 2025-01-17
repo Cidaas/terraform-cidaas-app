@@ -158,6 +158,8 @@ variable "common_configs" {
     })))
     accent_color                        = optional(string)
     logo_align                          = optional(string)
+    logo_uri                            = optional(string)
+    accept_roles_in_the_registration    = optional(bool)
     webfinger                           = optional(string)
     require_auth_time                   = optional(bool)
     enable_login_spi                    = optional(bool)
