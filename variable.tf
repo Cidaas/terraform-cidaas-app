@@ -87,12 +87,6 @@ variable "validate_phone_number" {
   default     = null
 }
 
-variable "fds_enabled" {
-  type        = bool
-  description = "Flag to enable or disable fraud detection system."
-  default     = null
-}
-
 variable "hosted_page_group" {
   type        = string
   description = "Hosted page group."
@@ -272,12 +266,6 @@ variable "default_acr_values" {
   default     = null
 }
 
-variable "editable" {
-  type        = bool
-  description = "Flag to define if your client is editable or not."
-  default     = null
-}
-
 variable "web_message_uris" {
   type        = set(string)
   description = "A list of URLs for web messages used."
@@ -376,12 +364,6 @@ variable "allowed_fields" {
   default     = null
 }
 
-variable "always_ask_mfa" {
-  type        = bool
-  description = "Flag to always ask for MFA."
-  default     = null
-}
-
 variable "smart_mfa" {
   type        = bool
   description = "Flag to enable smart MFA."
@@ -418,18 +400,6 @@ variable "communication_medium_verification" {
   default     = null
 }
 
-variable "email_verification_required" {
-  type        = bool
-  description = "Flag to require email verification."
-  default     = null
-}
-
-variable "mobile_number_verification_required" {
-  type        = bool
-  description = "Flag to require mobile number verification."
-  default     = null
-}
-
 variable "allowed_roles" {
   type        = set(string)
   description = "Allowed roles for the client."
@@ -439,12 +409,6 @@ variable "allowed_roles" {
 variable "default_roles" {
   type        = set(string)
   description = "Default roles for the client."
-  default     = null
-}
-
-variable "enable_classical_provider" {
-  type        = bool
-  description = "Flag to enable classical provider."
   default     = null
 }
 
@@ -491,12 +455,6 @@ variable "is_register_success_page_enabled" {
 variable "group_ids" {
   type        = set(string)
   description = "Group IDs for the client."
-  default     = null
-}
-
-variable "is_group_login_selection_enabled" {
-  type        = bool
-  description = "Flag to enable group login selection."
   default     = null
 }
 
@@ -842,7 +800,6 @@ variable "common_configs" {
     register_with_login_information = optional(bool)
     allow_disposable_email          = optional(bool)
     validate_phone_number           = optional(bool)
-    fds_enabled                     = optional(bool)
     hosted_page_group               = optional(string)
     client_display_name             = optional(string)
     response_types                  = optional(list(string))
@@ -891,18 +848,14 @@ variable "common_configs" {
     })))
     enabled                             = optional(bool)
     allowed_fields                      = optional(list(string))
-    always_ask_mfa                      = optional(bool)
     smart_mfa                           = optional(bool)
     allowed_mfa                         = optional(list(string))
     captcha_ref                         = optional(string)
     captcha_refs                        = optional(list(string))
     consent_refs                        = optional(list(string))
     communication_medium_verification   = optional(string)
-    email_verification_required         = optional(bool)
-    mobile_number_verification_required = optional(bool)
     allowed_roles                       = optional(list(string))
     default_roles                       = optional(list(string))
-    enable_classical_provider           = optional(bool)
     is_remember_me_selected             = optional(bool)
     enable_bot_detection                = optional(bool)
     bot_provider                        = optional(string)
@@ -914,7 +867,6 @@ variable "common_configs" {
     is_login_success_page_enabled    = optional(bool)
     is_register_success_page_enabled = optional(bool)
     group_ids                        = optional(list(string))
-    is_group_login_selection_enabled = optional(bool)
     group_selection = optional(object({
       always_show_group_selection = optional(bool)
       selectable_groups           = optional(list(string))
@@ -1000,7 +952,6 @@ variable "common_configs" {
     token_endpoint_auth_method       = optional(string)
     token_endpoint_auth_signing_alg  = optional(string)
     default_acr_values               = optional(list(string))
-    editable                         = optional(bool)
     web_message_uris                 = optional(list(string))
     initiate_login_uri               = optional(string)
     registration_client_uri          = optional(string)

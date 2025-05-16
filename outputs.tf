@@ -84,11 +84,6 @@ output "validate_phone_number" {
   description = "Whether phone number validation is enabled"
 }
 
-output "fds_enabled" {
-  value       = cidaas_app.app.fds_enabled
-  description = "Whether FDS is enabled"
-}
-
 output "hosted_page_group" {
   value       = cidaas_app.app.hosted_page_group
   description = "The hosted page group"
@@ -224,11 +219,6 @@ output "default_acr_values" {
   description = "The default ACR values"
 }
 
-output "editable" {
-  value       = cidaas_app.app.editable
-  description = "Whether the client is editable"
-}
-
 output "web_message_uris" {
   value       = cidaas_app.app.web_message_uris
   description = "The web message URIs"
@@ -279,11 +269,6 @@ output "allowed_fields" {
   description = "The allowed fields"
 }
 
-output "always_ask_mfa" {
-  value       = cidaas_app.app.always_ask_mfa
-  description = "Whether to always ask for MFA"
-}
-
 output "smart_mfa" {
   value       = cidaas_app.app.smart_mfa
   description = "Whether smart MFA is enabled"
@@ -314,16 +299,6 @@ output "communication_medium_verification" {
   description = "The communication medium verification"
 }
 
-output "email_verification_required" {
-  value       = cidaas_app.app.email_verification_required
-  description = "Whether email verification is required"
-}
-
-output "mobile_number_verification_required" {
-  value       = cidaas_app.app.mobile_number_verification_required
-  description = "Whether mobile number verification is required"
-}
-
 output "allowed_roles" {
   value       = cidaas_app.app.allowed_roles
   description = "The allowed roles"
@@ -332,11 +307,6 @@ output "allowed_roles" {
 output "default_roles" {
   value       = cidaas_app.app.default_roles
   description = "The default roles"
-}
-
-output "enable_classical_provider" {
-  value       = cidaas_app.app.enable_classical_provider
-  description = "Whether classical provider is enabled"
 }
 
 output "is_remember_me_selected" {
@@ -372,11 +342,6 @@ output "is_register_success_page_enabled" {
 output "group_ids" {
   value       = cidaas_app.app.group_ids
   description = "The group IDs"
-}
-
-output "is_group_login_selection_enabled" {
-  value       = cidaas_app.app.is_group_login_selection_enabled
-  description = "Whether group login selection is enabled"
 }
 
 output "group_selection" {
