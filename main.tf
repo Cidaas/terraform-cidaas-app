@@ -21,7 +21,6 @@ locals {
     register_with_login_information     = var.register_with_login_information
     allow_disposable_email              = var.allow_disposable_email
     validate_phone_number               = var.validate_phone_number
-    fds_enabled                         = var.fds_enabled
     hosted_page_group                   = var.hosted_page_group
     client_display_name                 = var.client_display_name
     response_types                      = var.response_types
@@ -48,18 +47,14 @@ locals {
     operations_allowed_groups           = var.operations_allowed_groups
     enabled                             = var.enabled
     allowed_fields                      = var.allowed_fields
-    always_ask_mfa                      = var.always_ask_mfa
     smart_mfa                           = var.smart_mfa
     allowed_mfa                         = var.allowed_mfa
     captcha_ref                         = var.captcha_ref
     captcha_refs                        = var.captcha_refs
     consent_refs                        = var.consent_refs
     communication_medium_verification   = var.communication_medium_verification
-    email_verification_required         = var.email_verification_required
-    mobile_number_verification_required = var.mobile_number_verification_required
     allowed_roles                       = var.allowed_roles
     default_roles                       = var.default_roles
-    enable_classical_provider           = var.enable_classical_provider
     is_remember_me_selected             = var.is_remember_me_selected
     enable_bot_detection                = var.enable_bot_detection
     bot_provider                        = var.bot_provider
@@ -67,7 +62,6 @@ locals {
     is_login_success_page_enabled       = var.is_login_success_page_enabled
     is_register_success_page_enabled    = var.is_register_success_page_enabled
     group_ids                           = var.group_ids
-    is_group_login_selection_enabled    = var.is_group_login_selection_enabled
     group_selection                     = var.group_selection
     group_types                         = var.group_types
     backchannel_logout_uri              = var.backchannel_logout_uri
@@ -112,7 +106,6 @@ locals {
     token_endpoint_auth_method          = var.token_endpoint_auth_method
     token_endpoint_auth_signing_alg     = var.token_endpoint_auth_signing_alg
     default_acr_values                  = var.default_acr_values
-    editable                            = var.editable
     web_message_uris                    = var.web_message_uris
     initiate_login_uri                  = var.initiate_login_uri
     registration_client_uri             = var.registration_client_uri
@@ -155,7 +148,6 @@ resource "cidaas_app" "app" {
   register_with_login_information     = local.defaults["register_with_login_information"]
   allow_disposable_email              = local.defaults["allow_disposable_email"]
   validate_phone_number               = local.defaults["validate_phone_number"]
-  fds_enabled                         = local.defaults["fds_enabled"]
   hosted_page_group                   = local.defaults["hosted_page_group"]
   client_display_name                 = local.defaults["client_display_name"]
   response_types                      = local.defaults["response_types"]
@@ -182,18 +174,14 @@ resource "cidaas_app" "app" {
   operations_allowed_groups           = local.defaults["operations_allowed_groups"]
   enabled                             = local.defaults["enabled"]
   allowed_fields                      = local.defaults["allowed_fields"]
-  always_ask_mfa                      = local.defaults["always_ask_mfa"]
   smart_mfa                           = local.defaults["smart_mfa"]
   allowed_mfa                         = local.defaults["allowed_mfa"]
   captcha_ref                         = local.defaults["captcha_ref"]
   captcha_refs                        = local.defaults["captcha_refs"]
   consent_refs                        = local.defaults["consent_refs"]
   communication_medium_verification   = local.defaults["communication_medium_verification"]
-  email_verification_required         = local.defaults["email_verification_required"]
-  mobile_number_verification_required = local.defaults["mobile_number_verification_required"]
   allowed_roles                       = local.defaults["allowed_roles"]
   default_roles                       = local.defaults["default_roles"]
-  enable_classical_provider           = local.defaults["enable_classical_provider"]
   is_remember_me_selected             = local.defaults["is_remember_me_selected"]
   enable_bot_detection                = local.defaults["enable_bot_detection"]
   bot_provider                        = local.defaults["bot_provider"]
@@ -201,7 +189,6 @@ resource "cidaas_app" "app" {
   is_login_success_page_enabled       = local.defaults["is_login_success_page_enabled"]
   is_register_success_page_enabled    = local.defaults["is_register_success_page_enabled"]
   group_ids                           = local.defaults["group_ids"]
-  is_group_login_selection_enabled    = local.defaults["is_group_login_selection_enabled"]
   group_selection                     = local.defaults["group_selection"]
   group_types                         = local.defaults["group_types"]
   backchannel_logout_uri              = local.defaults["backchannel_logout_uri"]
@@ -246,7 +233,6 @@ resource "cidaas_app" "app" {
   token_endpoint_auth_method          = local.defaults["token_endpoint_auth_method"]
   token_endpoint_auth_signing_alg     = local.defaults["token_endpoint_auth_signing_alg"]
   default_acr_values                  = local.defaults["default_acr_values"]
-  editable                            = local.defaults["editable"]
   web_message_uris                    = local.defaults["web_message_uris"]
   initiate_login_uri                  = local.defaults["initiate_login_uri"]
   registration_client_uri             = local.defaults["registration_client_uri"]

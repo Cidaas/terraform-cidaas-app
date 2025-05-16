@@ -33,8 +33,6 @@ module "cidaas_app" {
   company_address = "Wimsheim"
   company_website = "https://widas.com"
   allowed_scopes = ["openid", "profile", "email"]
-  redirect_uris = ["https://cidaas.de/home"]
-  allowed_logout_urls = ["https://cidaas.de/logout"]
 
   # Optional attributes
   media_type = "IMAGE"
@@ -54,8 +52,6 @@ module "cidaas_app" {
 | company_address | Company address | `string` |
 | company_website | Company website URL | `string` |
 | allowed_scopes | List of allowed scopes | `set(string)` |
-| redirect_uris | List of allowed redirect URIs | `set(string)` |
-| allowed_logout_urls | List of allowed logout URLs | `set(string)` |
 
 ### Optional Inputs
 
